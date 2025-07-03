@@ -1,11 +1,6 @@
 pipeline {
-    agent any               // Run on the built-in worker (the Jenkins container)
+    agent any
     stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/<your-user>/hello-jenkins.git'
-            }
-        }
         stage('Run script') {
             steps {
                 sh 'chmod +x hello.sh && ./hello.sh'
